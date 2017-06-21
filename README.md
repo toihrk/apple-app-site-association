@@ -1,5 +1,6 @@
 # Apple::App::Site::Association
 
+[![Gem Version](https://badge.fury.io/rb/apple-app-site-association.svg)](https://badge.fury.io/rb/apple-app-site-association)
 [![Build Status](https://travis-ci.org/toihrk/apple-app-site-association.svg?branch=master)](https://travis-ci.org/toihrk/apple-app-site-association)
 
 A mountable Sinatra application for introduce the universal link to your application.
