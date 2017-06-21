@@ -52,10 +52,12 @@ describe Apple::App::Site::Association do
         expect(subject).to be_a String
       end
 
-      it 'has keys' do
+      it 'should have keys' do
         config = JSON.parse(subject)
-        expect(config.key?('apps')).to be true
-        expect(config.key?('details')).to be true
+        expect(config.key?('applinks')).to be true
+        applinks = config['applinks']
+        expect(applinks.key?('apps')).to be true
+        expect(applinks.key?('details')).to be true
       end
     end
 
@@ -79,14 +81,17 @@ describe Apple::App::Site::Association do
       it 'should have keys' do
         json = subject.body
         body = JSON.parse(json)
-        expect(body.key?('apps')).to be true
-        expect(body.key?('details')).to be true
+        expect(body.key?('applinks')).to be true
+        applinks = body['applinks']
+        expect(applinks.key?('apps')).to be true
+        expect(applinks.key?('details')).to be true
       end
 
       it 'should have default values' do
         json = subject.body
         body = JSON.parse(json)
-        body.values.each do |v|
+        applinks = body['applinks']
+        applinks.values.each do |v|
           expect(v).to be_a Array
           expect(v.empty?).to be true
         end
@@ -121,15 +126,18 @@ describe Apple::App::Site::Association do
         it 'should have keys' do
           json = subject.body
           body = JSON.parse(json)
-          expect(body.key?('apps')).to be true
-          expect(body.key?('details')).to be true
+          expect(body.key?('applinks')).to be true
+          applinks = body['applinks']
+          expect(applinks.key?('apps')).to be true
+          expect(applinks.key?('details')).to be true
         end
 
         it 'should have configured value' do
           json = subject.body
           body = JSON.parse(json)
-          body_apps = body['apps']
-          body_details = body['details']
+          applinks = body['applinks']
+          body_apps = applinks['apps']
+          body_details = applinks['details']
           expect(body_apps).to eq(apps)
           expect(body_details).to eq(details.map { |d| d.map { |k, v| [k.to_s, v] }.to_h })
         end

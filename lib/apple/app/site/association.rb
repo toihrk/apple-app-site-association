@@ -23,8 +23,10 @@ module Apple
 
           def to_json
             {
-              apps: @apps,
-              details: @details
+              applinks: {
+                apps: @apps,
+                details: @details
+              }
             }.to_json
           end
         end
