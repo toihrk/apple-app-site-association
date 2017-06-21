@@ -1,0 +1,19 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  DisplayCopNames: true
+
+Metrics/LineLength:
+  Max: 116
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Style/HashSyntax:
+  Exclude:
+    - 'Rakefile'
+
+Style/Documentation:
+  Enabled: false
