@@ -3,7 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/apple-app-site-association.svg)](https://badge.fury.io/rb/apple-app-site-association)
 [![Build Status](https://travis-ci.org/toihrk/apple-app-site-association.svg?branch=master)](https://travis-ci.org/toihrk/apple-app-site-association)
 
-A mountable Sinatra application for introduce the universal link to your application.
+A mountable Sinatra application for introduce the [universal link](https://developer.apple.com/library/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html) to your application.
 
 
 ## Installation
@@ -17,10 +17,6 @@ gem 'apple-app-site-association'
 And then execute:
 
     $ bundle
-
-Or install it yourself as:
-
-    $ gem install apple-app-site-association
 
 
 ## Usage
@@ -37,8 +33,8 @@ Configure:
 # config/initializers/apple-app-site-association.rb
 
 Apple::App::Site::Association.configure do |c|
-  c.datails { appID: '9JA89QQLNQ.com.apple.wwdc', paths: ['/wwdc/news/', '/videos/wwdc/2015/*'] },
-            { appID: 'ABCD1234.com.apple.wwdc', paths: '*' }
+  c.datails({ appID: '9JA89QQLNQ.com.apple.wwdc', paths: ['/wwdc/news/', '/videos/wwdc/2015/*'] },
+            { appID: 'ABCD1234.com.apple.wwdc', paths: '*' })
 end
 ```
 
@@ -60,7 +56,7 @@ end
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in [`apple-app-site-association.gemspec`](https://github.com/toihrk/apple-app-site-association/blob/master/apple-app-site-accosiation.gemspec), and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
