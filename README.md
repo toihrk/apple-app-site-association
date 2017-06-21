@@ -1,5 +1,7 @@
 # Apple::App::Site::Association
 
+[![Build Status](https://travis-ci.org/toihrk/apple-app-site-association.svg?branch=master)](https://travis-ci.org/toihrk/apple-app-site-association)
+
 A mountable Sinatra application for introduce the universal link to your application.
 
 
@@ -32,7 +34,6 @@ Configure:
 
 ```rb
 # config/initializers/apple-app-site-association.rb
-
 
 Apple::App::Site::Association.configure do |c|
   c.datails { appID: '9JA89QQLNQ.com.apple.wwdc', paths: ['/wwdc/news/', '/videos/wwdc/2015/*'] },
