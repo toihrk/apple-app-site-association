@@ -6,13 +6,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |s|
   s.name        = 'apple-app-site-association'
-  s.version     = '0.1.1'
+  s.version     = '0.1.2'
   s.authors     = ['toihrk']
   s.email       = ['toihrk@me.com']
 
   s.summary     = 'A mountable Sinatra application for introduce the universal link to your application'
   s.description = s.summary
-  s.homepage    = 'https://github.com/toihrk/apple-app-site-accosiation'
+  s.homepage    = 'https://github.com/toihrk/apple-app-site-association'
   s.license     = 'MIT'
 
   raise 'RubyGems 2.0 or newer is required to protect against public gem pushes.' unless s.respond_to?(:metadata)
